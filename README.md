@@ -48,7 +48,7 @@ The application can play video from local, direct urls or youtube urls.
    * Configuration should be Debug or Release. Default is Release.  
    * 'Visual Studio Year' should be '2017' ,'2015', '2013' or '2012'. Defaul is '2015
    * Platform should be 'x64' or 'x86'. Default is x64.     
-   After build success, the binrary package will be put in folder ./wmf-player/build/application/!<Configuration>.   
+   After build success, the binrary package will be put in folder ./wmf-player/build/application/{Configuration}.   
     
    ```
    If any error occur, try run buid.bat [Configuration] again.
