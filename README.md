@@ -42,12 +42,11 @@ The application can play video from local, direct urls or youtube urls.
    run following commands to configure project for x86
    ```
    cd wmf-player/build
-   configure-x86 [Platform]
+   configure-x86
    buid.bat [Configuration]
    ```
    * Configuration should be Debug or Release. Default is Release.  
-   * 'Visual Studio Year' should be '2017' ,'2015', '2013' or '2012'. Defaul is '2015
-   * Platform should be 'x64' or 'x86'. Default is x64.     
+   * 'Visual Studio Year' should be '2017' ,'2015', '2013' or '2012'. Default is '2015.  
    After build success, the binrary package will be put in folder ./wmf-player/build/application/{Configuration}.   
     
    ```
