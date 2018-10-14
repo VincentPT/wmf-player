@@ -2,7 +2,7 @@
 Using media foundation and cinder to play video.  
 The application can play video from local, direct urls or youtube urls.
 
-<p align="center"><img src="src/doc/Screenshot.PNG)"/></p>
+![](https://github.com/VincentPT/wmf-player/blob/master/src/doc/Screenshot.PNG)
 
 # Technologies
 * CMake
