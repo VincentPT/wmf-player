@@ -1,0 +1,30 @@
+cmake_minimum_required(VERSION 3.2.0)
+
+if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+    SET (PLATFORM x64)
+else( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+    SET (PLATFORM x86)
+endif( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+
+if (NOT DEFINED CINDER_PATH)
+	set( CINDER_PATH ${CMAKE_SOURCE_PATH}/external/Cinder)
+endif()
+
+set( CINDER_IMGUI_BUILT_PATH ${CINDER_PATH}/blocks/Cinder-ImGui/lib/msw/${PLATFORM} )
+
+file(GLOB_RECURSE CINDER_IMGUI_LIBS ${CINDER_IMGUI_BUILT_PATH}/*.lib)
+foreach(LIB_PATH ${CINDER_IMGUI_LIBS})
+	string(FIND ${LIB_PATH} "Debug" LIB_FOR_CONFIG)
+	if( ${LIB_FOR_CONFIG} LESS 0 )
+		string(FIND ${LIB_PATH} "Release" LIB_FOR_CONFIG)
+		if( ${LIB_FOR_CONFIG} GREATER -1 )
+			set (CINDER_IMGUI_R ${LIB_PATH})
+		endif()
+	else()
+		set (CINDER_IMGUI_D ${LIB_PATH})
+	endif()
+endforeach()
+
+target_include_directories(${PROJECT_NAME} PRIVATE ${CINDER_PATH}/blocks/Cinder-ImGui/include)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CINDER_PATH}/blocks/Cinder-ImGui/lib/imgui)
+target_link_libraries(${PROJECT_NAME} debug "${CINDER_IMGUI_D}" optimized "${CINDER_IMGUI_R}")
