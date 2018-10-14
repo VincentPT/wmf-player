@@ -2,6 +2,8 @@
 Using media foundation and cinder to play video.  
 The application can play video from local, direct urls or youtube urls.
 
+<p align="center"><img src="doc/images/Screenshot.PNG)"/></p>
+
 # Technologies
 * CMake
 * cppan
